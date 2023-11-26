@@ -9,20 +9,6 @@ fs.readFile("./3.txt", "utf8", (err, data) => {
   data = data.trim();
   data = data.split("\n");
 
-  let result = [];
-
-  for (let i in data) {
-    const comp1 = data[i].slice(0, data[i].length / 2);
-    const comp2 = data[i].slice(data[i].length / 2, data[i].length);
-
-    for (let j in comp1) {
-      if (comp2.includes(comp1[j])) {
-        result.push(comp1[j]);
-        break;
-      }
-    }
-  }
-
   function getPrioritySum(arr) {
     let final = [];
 
@@ -38,10 +24,26 @@ fs.readFile("./3.txt", "utf8", (err, data) => {
       return accumulator + currentValue;
     }, 0);
 
-    return sum
+    return sum;
   }
 
-  console.log(getPrioritySum(result))
+  // Part 1
+
+  let result = [];
+
+  for (let i in data) {
+    const comp1 = data[i].slice(0, data[i].length / 2);
+    const comp2 = data[i].slice(data[i].length / 2, data[i].length);
+
+    for (let j in comp1) {
+      if (comp2.includes(comp1[j])) {
+        result.push(comp1[j]);
+        break;
+      }
+    }
+  }
+
+  console.log(getPrioritySum(result));
 
   // Part 2
 
@@ -59,6 +61,5 @@ fs.readFile("./3.txt", "utf8", (err, data) => {
     }
   }
 
-  console.log(result2.length);
-  console.log(getPrioritySum(result2))
+  console.log(getPrioritySum(result2));
 });
