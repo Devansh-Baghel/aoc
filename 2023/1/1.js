@@ -48,7 +48,10 @@ data = data.replaceAll("eight", "8")
 data = data.replaceAll("nine", "9")
 data = data.split("\n")
 data.pop()
+<<<<<<< HEAD
 console.log(data)
+=======
+>>>>>>> faf0a83 (super hacky solution for part 2)
 
 
 console.log(findSum(data))
