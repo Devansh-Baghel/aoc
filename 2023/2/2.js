@@ -2,8 +2,6 @@ let data = await Bun.file("in.txt").text();
 data = data.split("\n");
 data.pop();
 
-// Part 1
-
 let part1 = 0;
 let part2 = 0;
 
