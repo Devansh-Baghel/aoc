@@ -23,3 +23,21 @@ for (let i = 0; i < leftList.length; i++) {
 console.log(totalDistance);
 
 // Part 2
+let totalSimilarityScore = 0;
+
+function countOccurrences(n) {
+  let count = 0;
+  for (let i = 0; i < rightList.length; i++) {
+    if (rightList[i] === n) count++;
+  }
+
+  return count;
+}
+
+for (let i = 0; i < leftList.length; i++) {
+  let similartiyScore = leftList[i] * countOccurrences(leftList[i]);
+
+  totalSimilarityScore += similartiyScore;
+}
+
+console.log(totalSimilarityScore);
